@@ -1,0 +1,29 @@
+@import '../../styles/helper/variables';
+@import '../../styles/helper/mixins';
+
+.jobs__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  .jobs__listing {
+    background: white;
+    height: 20vh;
+    width: 60vw;
+
+    margin: 1.5em;
+
+    .jobs__listing_right {
+      width: 20%;
+      float: right;
+    }
+
+    .jobs__listing_left {
+      width: 80%;
+      float: left;
+    }
+  }
+}

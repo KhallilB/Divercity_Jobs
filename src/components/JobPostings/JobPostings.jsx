@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './JobPostings.css';
 
 class JobPostings extends React.Component {
@@ -25,21 +26,26 @@ class JobPostings extends React.Component {
     render() {
         return (
             <div className="jobs__container">
-                {this.state.jobs.map((jobs, index) => {
-                    return (
-                        <div key={jobs.id} className="jobs__listing">
-                            <div className="jobs__listing_left">
-                                <h2>{jobs.title}</h2>
-                                <h3>{jobs.company}</h3>
-                                <p>Amount of applicants: {jobs.applicant_count}</p>
+                {
+                    this.state.jobs.map((jobs, index) => {
+                        return (
+                            <div key={jobs.id} className="jobs__listing">
+                                <div className="jobs__listing_left">
+                                    <h2>{jobs.title}</h2>
+                                    <h3>{jobs.job_type}</h3>
+                                    <h3>{jobs.company} • {jobs.location === undefined ? 'Remote' : jobs.location}</h3>
+                                </div>
+
+                                <div className="jobs__listing_right">
+                                    <p>Amount Applied: {jobs.applicant_count}</p>
+                                    <Link to={`/jobs/${jobs.id}`}>
+                                        <button>Apply</button>
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="jobs__listing_right">
-                                <p>{jobs.job_type}</p>
-                                <p>{jobs.location}</p>
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+
             </div>
         )
     }

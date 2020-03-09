@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EAEnB,KAAK,EAAE,IAAI;CAmBZ;;AAzBD,AAQE,gBARc,CAQd,cAAc,CAAC;EACb,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EAEX,MAAM,EAAE,KAAK;CAWd;;AAxBH,AAeI,gBAfY,CAQd,cAAc,CAOZ,oBAAoB,CAAC;EACnB,KAAK,EAAE,GAAG;EACV,KAAK,EAAE,KAAK;CACb;;AAlBL,AAoBI,gBApBY,CAQd,cAAc,CAYZ,mBAAmB,CAAC;EAClB,KAAK,EAAE,GAAG;EACV,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "JobPostings.scss",
+        "../../styles/helper/_variables.scss",
+        "../../styles/helper/_mixins.scss"
+    ],
+    "names": [],
+    "file": "JobPostings.css"
+}

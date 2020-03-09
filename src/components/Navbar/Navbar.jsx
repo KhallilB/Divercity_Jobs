@@ -18,8 +18,8 @@ class Navbar extends React.Component {
                 <div className="navbar__links_container">
                     <ul className="navbar__links">
                         <Link to="/jobs"><li>Jobs</li></Link>
-                        <Link><li>Sign Up</li></Link>
-                        <Link><li>Log In</li></Link>
+                        <Link to="/auth/signup"><li>Sign Up</li></Link>
+                        <Link to="/auth/login"><li>Log In</li></Link>
                     </ul>
                 </div>
             </div>

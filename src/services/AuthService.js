@@ -8,26 +8,21 @@ class AuthService {
 
   async signUp(username, password, name) {
     await axios
-      .post({ username, password, name })
+      .post(
+        'https://divercity-test.herokuapp.com/register',
+        { username, password, name }
+      )
       .then(res => {
         console.log(res);
+        return res;
       })
       .catch(err => {
         console.log(err);
         return err;
       });
   }
-  async logIn(username, password) {
-    await axios
-      .post({ username, password })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-        return err;
-      });
-  }
+
+  async logIn(username, password) {}
 }
 
 export default AuthService;

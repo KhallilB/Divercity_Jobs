@@ -1,0 +1,53 @@
+.navbar_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #2da2f1;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  width: 100vw;
+}
+
+.navbar_container img {
+  margin-left: 0.7em;
+}
+
+.navbar_container .navbar__links_container {
+  width: 100%;
+}
+
+.navbar_container .navbar__links_container .navbar__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 0.7em;
+}
+
+.navbar_container .navbar__links_container .navbar__links li {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: bold;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-left: 2em;
+}
+
+.navbar_container .navbar__links_container .navbar__links li:hover {
+  color: #d1d1d1;
+}
+/*# sourceMappingURL=Navbar.css.map */

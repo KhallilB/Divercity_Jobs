@@ -1,0 +1,50 @@
+@import '../../styles/helper/variables';
+@import '../../styles/helper/mixins';
+
+//  Outer Container
+.navbar_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  background: darken($color: $primaryBlue, $amount: 15);
+
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+
+  width: 100vw;
+
+  img {
+    margin-left: 0.7em;
+  }
+
+  // Inner Container
+  .navbar__links_container {
+    width: 100%;
+
+    .navbar__links {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      margin-right: 0.7em;
+
+      li {
+        // Link Fonts
+        @include primary-font(
+          $color: $white,
+          $size: 1.2em,
+          $weight: bold
+        );
+
+        transition: all 0.5s;
+
+        margin-left: 2em;
+
+        &:hover {
+          color: darken($color: $white, $amount: 18);
+        }
+      }
+    }
+  }
+}

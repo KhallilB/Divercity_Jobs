@@ -5,6 +5,8 @@ import App from './components/App/App';
 import Navbar from './components/Navbar/Navbar';
 import * as serviceWorker from './serviceWorker';
 
+import JobPostings from './components/JobPostings/JobPostings';
+
 import {
   Route,
   BrowserRouter as Router,
@@ -16,6 +18,10 @@ const routing = (
     <Navbar />
     <Switch>
       <Route exact path='/' component={App}></Route>
+      <Route
+        exact
+        path='/jobs'
+        component={JobPostings}></Route>
     </Switch>
   </Router>
 );

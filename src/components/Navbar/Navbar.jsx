@@ -17,7 +17,7 @@ class Navbar extends React.Component {
                 <Link to="/"><img src={DivercityLogo} alt="Divercity" /></Link>
                 <div className="navbar__links_container">
                     <ul className="navbar__links">
-                        <Link><li>Jobs</li></Link>
+                        <Link to="/jobs"><li>Jobs</li></Link>
                         <Link><li>Sign Up</li></Link>
                         <Link><li>Log In</li></Link>
                     </ul>

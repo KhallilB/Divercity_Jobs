@@ -55,7 +55,7 @@ class SignUp extends React.Component {
 
 
     render() {
-        let { username, name, password, passwordConfirm, registered } = this.state;
+        let { username, name, password, passwordConfirm } = this.state;
 
         return (
             <div>
@@ -91,7 +91,7 @@ class SignUp extends React.Component {
                             value={passwordConfirm}
                             onChange={this.handleChange}
                         />
-                        <button type="submit" value="submit" on onClick={this.redirectUser}>Submit</button>
+                        <button type="submit" value="submit" onClick={this.redirectUser}>Submit</button>
                     </form>}
             </div>
         )

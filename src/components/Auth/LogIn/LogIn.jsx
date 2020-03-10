@@ -74,7 +74,7 @@ class LogIn extends React.Component {
                             value={password}
                             onChange={this.handleChange}
                         />
-                        <button type="submit" value="submit" on onClick={this.redirectUser}>Submit</button>
+                        <button type="submit" value="submit" onClick={this.redirectUser}>Submit</button>
                     </form>}
             </div>
         )

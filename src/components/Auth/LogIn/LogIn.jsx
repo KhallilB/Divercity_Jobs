@@ -22,7 +22,7 @@ class LogIn extends React.Component {
 
         if (this.state.registered) {
             return (
-                <Redirect from={{ pathname: "/auth/  " }} to={{ pathname: "/jobs" }} />
+                <Redirect from={{ pathname: "/auth/login" }} to={{ pathname: "/jobs" }} />
             )
         }
     }
@@ -32,8 +32,6 @@ class LogIn extends React.Component {
         this.setState({
             [event.target.name]: event.target.value
         });
-
-        console.log(this.state);
     };
 
     // Submit form information
@@ -44,11 +42,11 @@ class LogIn extends React.Component {
 
         let status = await this.Auth.logIn(username, password)
         this.setState({ status });
+        if (status === 200) {
+            window.location = '/jobs';
+        }
     };
 
-    redirectUser = event => {
-        window.location.href("/jobs")
-    }
 
 
     render() {

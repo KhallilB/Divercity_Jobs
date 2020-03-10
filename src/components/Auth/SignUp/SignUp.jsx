@@ -35,8 +35,6 @@ class SignUp extends React.Component {
         this.setState({
             [event.target.name]: event.target.value
         });
-
-        console.log(this.state);
     };
 
     // Submit form information

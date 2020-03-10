@@ -42,7 +42,6 @@ class AuthService {
         )
         .then(async res => {
           if (res.status === 200) {
-            console.log(res);
             let token = this.createToken();
             this.setToken(token);
 

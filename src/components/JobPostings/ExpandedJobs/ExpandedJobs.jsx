@@ -20,9 +20,6 @@ class ExpandedJobs extends React.Component {
 
     render() {
         let job = this.props.location.state;
-        let parser = new DOMParser();
-        let description = parser.parseFromString(job.description, "text/xml")
-        console.log(description)
         return (
             <div className="job__container">
                 <h1>{job.title}</h1>

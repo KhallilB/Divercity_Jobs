@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 import JobPostings from './components/JobPostings/JobPostings';
 import ExpandedJobs from './components/JobPostings/ExpandedJobs/ExpandedJobs';
+import Apply from './components/Apply/Apply';
 import SignUp from './components/Auth/SignUp/SignUp';
 import LogIn from './components/Auth/LogIn/LogIn';
 
@@ -26,6 +27,11 @@ const routing = (
         exact
         path='/jobs/:id'
         component={ExpandedJobs}
+      />
+      <Route
+        exact
+        path='/jobs/:id/apply'
+        component={Apply}
       />
       <Route exact path='/auth/signup' component={SignUp} />
       <Route exact path='/auth/login' component={LogIn} />

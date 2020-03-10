@@ -16,10 +16,6 @@ class AuthService {
         )
         .then(async res => {
           if (res.status === 200) {
-            console.log('Results: ', res);
-            let token = this.createToken();
-            this.setToken(token);
-
             resolve(res.status);
           }
 
@@ -42,9 +38,8 @@ class AuthService {
         )
         .then(async res => {
           if (res.status === 200) {
-            let token = this.createToken();
+            let token = res.data.token;
             this.setToken(token);
-
             resolve(res.status);
           }
 
@@ -55,13 +50,6 @@ class AuthService {
           reject(err);
         });
     });
-  }
-
-  //   Creates Token
-  createToken() {
-    return Math.random()
-      .toString(36)
-      .replace('0.', '');
   }
 
   //  Put token in localstorage

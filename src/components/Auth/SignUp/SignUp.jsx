@@ -47,7 +47,7 @@ class SignUp extends React.Component {
         this.setState({ status });
 
         if (status === 200) {
-            window.location = '/jobs';
+            window.location = '/auth/login';
         }
     };
 

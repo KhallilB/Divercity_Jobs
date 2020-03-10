@@ -13,9 +13,21 @@ class SignUp extends React.Component {
             name: '',
             password: '',
             passwordConfirm: '',
-            status: null
+            status: null,
+            registered: false
         }
         this.Auth = new AuthService();
+    }
+
+    componentDidMount() {
+        let registered = this.Auth.loggedIn();
+        this.setState({ registered })
+
+        if (this.state.registered) {
+            return (
+                <Redirect from={{ pathname: "/auth/  " }} to={{ pathname: "/jobs" }} />
+            )
+        }
     }
 
     // Handle user inputs
@@ -35,49 +47,52 @@ class SignUp extends React.Component {
 
         let status = await this.Auth.signUp(username, name, password)
         this.setState({ status });
-
-        if (this.Auth.loggedIn()) {
-            return <Redirect to={'/jobs'} />
-        }
     };
 
+    redirectUser = event => {
+        window.location.href("/jobs")
+    }
+
+
     render() {
-        let { username, name, password, passwordConfirm } = this.state;
+        let { username, name, password, passwordConfirm, registered } = this.state;
 
         return (
             <div>
                 <h1>Sign Up</h1>
-                <form onSubmit={this.submitForm}>
-                    <input
-                        type="username"
-                        placeholder="Username"
-                        name="username"
-                        value={username}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="name"
-                        placeholder="Name"
-                        name="name"
-                        value={name}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        value={password}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Confirm Password"
-                        name="passwordConfirm"
-                        value={passwordConfirm}
-                        onChange={this.handleChange}
-                    />
-                    <button type="submit" value="submit">Submit</button>
-                </form>
+                {this.state.registered ?
+                    <Redirect to={{ pathname: '/jobs' }} />
+                    : <form onSubmit={this.submitForm}>
+                        <input
+                            type="username"
+                            placeholder="Username"
+                            name="username"
+                            value={username}
+                            onChange={this.handleChange}
+                        />
+                        <input
+                            type="name"
+                            placeholder="Name"
+                            name="name"
+                            value={name}
+                            onChange={this.handleChange}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            value={password}
+                            onChange={this.handleChange}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Confirm Password"
+                            name="passwordConfirm"
+                            value={passwordConfirm}
+                            onChange={this.handleChange}
+                        />
+                        <button type="submit" value="submit" on onClick={this.redirectUser}>Submit</button>
+                    </form>}
             </div>
         )
     }

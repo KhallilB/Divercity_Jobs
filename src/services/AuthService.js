@@ -33,8 +33,29 @@ class AuthService {
   }
 
   //   Logs a user in
-  async logIn(username, password) {
-    await axios.post('');
+  logIn(username, password) {
+    return new Promise((resolve, reject) => {
+      axios
+        .post(
+          'https://divercity-test.herokuapp.com/login',
+          { username, password }
+        )
+        .then(async res => {
+          if (res.status === 200) {
+            console.log(res);
+            let token = this.createToken();
+            this.setToken(token);
+
+            resolve(res.status);
+          }
+
+          resolve(res);
+        })
+        .catch(err => {
+          console.log(err);
+          reject(err);
+        });
+    });
   }
 
   //   Creates Token

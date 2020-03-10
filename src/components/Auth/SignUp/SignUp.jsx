@@ -1,6 +1,8 @@
 import React from 'react';
 import './SignUp.css';
 
+import { Redirect } from 'react-router-dom'
+
 import AuthService from '../../../services/AuthService';
 
 class SignUp extends React.Component {
@@ -11,6 +13,7 @@ class SignUp extends React.Component {
             name: '',
             password: '',
             passwordConfirm: '',
+            status: null
         }
         this.Auth = new AuthService();
     }
@@ -25,12 +28,17 @@ class SignUp extends React.Component {
     };
 
     // Submit form information
-    submitForm = event => {
+    submitForm = async event => {
         event.preventDefault();
 
         const { username, name, password } = this.state;
 
-        this.Auth.signUp(username, name, password);
+        let status = await this.Auth.signUp(username, name, password)
+        this.setState({ status });
+
+        if (this.Auth.loggedIn()) {
+            return <Redirect to={'/jobs'} />
+        }
     };
 
     render() {

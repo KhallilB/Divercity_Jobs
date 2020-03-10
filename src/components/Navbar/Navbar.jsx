@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthService from '../../services/AuthService';
 import './Navbar.css';
 
 import DivercityLogo from '../../assets/divercity-logo.png';
@@ -8,21 +9,35 @@ import DivercityLogo from '../../assets/divercity-logo.png';
 class Navbar extends React.Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            loggedIn: false
+        }
+        this.Auth = new AuthService();
+    }
+
+    componentDidMount() {
+        let loggedIn = this.Auth.loggedIn();
+        this.setState({ loggedIn });
     }
 
     render() {
+        let { loggedIn } = this.state;
         return (
             <div className="navbar_container">
                 <Link to="/"><img src={DivercityLogo} alt="Divercity" /></Link>
                 <div className="navbar__links_container">
-                    <ul className="navbar__links">
-                        <Link to="/jobs"><li>Jobs</li></Link>
-                        <Link to="/auth/signup"><li>Sign Up</li></Link>
-                        <Link to="/auth/login"><li>Log In</li></Link>
-                    </ul>
+                    {loggedIn ?
+                        <ul className="navbar__links">
+                            <Link to="/jobs"><li>Jobs</li></Link>
+                            <Link to="/auth/logout"><li>Logout</li></Link> :
+                      </ul> :
+                        <ul className="navbar__links">
+                            <Link to="/jobs"><li>Jobs</li></Link>
+                            <Link to="/auth/signup"><li>Sign Up</li></Link>
+                            <Link to="/auth/login"><li>Log In</li></Link>
+                        </ul>}
                 </div>
-            </div>
+            </div >
         )
     }
 }

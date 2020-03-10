@@ -38,7 +38,7 @@ class JobPostings extends React.Component {
 
                                 <div className="jobs__listing_right">
                                     <p>Amount Applied: {jobs.applicant_count}</p>
-                                    <Link to={`/jobs/${jobs.id}`}>
+                                    <Link to={{ pathname: `/jobs/${jobs.id}`, state: this.state.jobs[jobs.id - 1] }}>
                                         <button>Apply</button>
                                     </Link>
                                 </div>

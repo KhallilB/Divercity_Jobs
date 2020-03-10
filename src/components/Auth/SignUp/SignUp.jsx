@@ -25,7 +25,7 @@ class SignUp extends React.Component {
 
         if (this.state.registered) {
             return (
-                <Redirect from={{ pathname: "/auth/  " }} to={{ pathname: "/jobs" }} />
+                <Redirect from={{ pathname: "/auth/signup" }} to={{ pathname: "/jobs" }} />
             )
         }
     }
@@ -47,11 +47,12 @@ class SignUp extends React.Component {
 
         let status = await this.Auth.signUp(username, name, password)
         this.setState({ status });
+
+        if (status === 200) {
+            window.location = '/jobs';
+        }
     };
 
-    redirectUser = event => {
-        window.location.href("/jobs")
-    }
 
 
     render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import AuthService from '../../services/AuthService';
 import './Navbar.css';
 
@@ -20,6 +20,13 @@ class Navbar extends React.Component {
         this.setState({ loggedIn });
     }
 
+    logout = () => {
+        this.Auth.logout();
+        if (!this.Auth.loggedIn()) {
+            return window.location = '/';
+        }
+    }
+
     render() {
         let { loggedIn } = this.state;
         return (
@@ -29,8 +36,8 @@ class Navbar extends React.Component {
                     {loggedIn ?
                         <ul className="navbar__links">
                             <Link to="/jobs"><li>Jobs</li></Link>
-                            <Link to="/auth/logout"><li>Logout</li></Link> :
-                      </ul> :
+                            <Link><li onClick={this.logout}>Logout</li></Link>
+                        </ul> :
                         <ul className="navbar__links">
                             <Link to="/jobs"><li>Jobs</li></Link>
                             <Link to="/auth/signup"><li>Sign Up</li></Link>

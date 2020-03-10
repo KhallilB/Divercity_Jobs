@@ -84,6 +84,10 @@ class AuthService {
       return true;
     }
   }
+
+  logout() {
+    localStorage.removeItem('nl_token');
+  }
 }
 
 export default AuthService;

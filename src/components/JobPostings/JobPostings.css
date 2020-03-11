@@ -17,7 +17,7 @@
 
 .jobs__container .jobs__listing {
   background: white;
-  height: 20vh;
+  height: 22vh;
   width: 60vw;
   padding: 40px;
   margin: 1.5em;
@@ -61,6 +61,30 @@
 .jobs__container .jobs__listing .jobs__listing_left {
   width: 80%;
   float: left;
+}
+
+.jobs__container .jobs__listing .jobs__listing_left ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0;
+}
+
+.jobs__container .jobs__listing .jobs__listing_left ul li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  color: #fff;
+  margin-left: 0.4em;
+  padding: 8px;
+  background-color: #75c2f6;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .jobs__container .jobs__listing button {

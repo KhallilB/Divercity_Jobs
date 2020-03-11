@@ -20,6 +20,30 @@
   border-radius: 8px 8px 8px 8px;
 }
 
+.job__container .job__card ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0;
+}
+
+.job__container .job__card ul li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  color: #fff;
+  margin-left: 0.4em;
+  padding: 8px;
+  background-color: #75c2f6;
+  border-radius: 5px 5px 5px 5px;
+}
+
 .job__container .job__card h1 {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.8em;

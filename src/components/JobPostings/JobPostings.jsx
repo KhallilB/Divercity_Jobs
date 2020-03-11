@@ -12,9 +12,9 @@ class JobPostings extends React.Component {
         }
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         // Get all the jobs
-        await axios
+        axios
             .get('https://divercity-test.herokuapp.com/jobs')
             .then(res => {
                 let jobs = res.data.jobs;
@@ -34,6 +34,12 @@ class JobPostings extends React.Component {
                                     <h2>{jobs.title}</h2>
                                     <h3>{jobs.job_type}</h3>
                                     <h3>{jobs.company} • {jobs.location === undefined ? 'Remote' : jobs.location}</h3>
+
+                                    <ul>
+                                        {jobs.skills_tag.map((skill, index) =>
+                                            <li key={index}>{skill}</li>
+                                        )}
+                                    </ul>
                                 </div>
 
                                 <div className="jobs__listing_right">

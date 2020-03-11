@@ -11,7 +11,7 @@
 
   .jobs__listing {
     background: white;
-    height: 20vh;
+    height: 22vh;
     width: 60vw;
     padding: 40px;
     margin: 1.5em;
@@ -51,6 +51,26 @@
     .jobs__listing_left {
       width: 80%;
       float: left;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0;
+
+        li {
+          @include secondary-font(
+            $size: 0.9em,
+            $color: $white
+          );
+
+          margin-left: 0.4em;
+          padding: 8px;
+
+          background-color: $primaryBlue;
+          border-radius: 5px 5px 5px 5px;
+        }
+      }
     }
 
     button {

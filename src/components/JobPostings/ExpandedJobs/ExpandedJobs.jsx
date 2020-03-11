@@ -26,6 +26,12 @@ class ExpandedJobs extends React.Component {
                     <div className="job__card_top">
                         <h1>{job.title}</h1>
                         <h2>{job.company} • {job.location}</h2>
+
+                        <ul>
+                            {job.skills_tag.map((skill, index) =>
+                                <li key={index}>{skill}</li>
+                            )}
+                        </ul>
                     </div>
                     <div className="job__card_middle">
                         <h3><u>Job Description</u></h3>

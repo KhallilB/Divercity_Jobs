@@ -17,6 +17,26 @@
     padding: 20px;
     border-radius: 8px 8px 8px 8px;
 
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0;
+
+      li {
+        @include secondary-font(
+          $size: 0.9em,
+          $color: $white
+        );
+
+        margin-left: 0.4em;
+        padding: 8px;
+
+        background-color: $primaryBlue;
+        border-radius: 5px 5px 5px 5px;
+      }
+    }
+
     h1 {
       @include primary-font($size: 1.8em, $color: $black);
       font-weight: 800;

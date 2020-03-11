@@ -1,6 +1,8 @@
 import React from 'react';
 import JobService from '../../services/JobService';
 import './Apply.css';
+import { Link } from 'react-router-dom';
+import img from '../../assets/icon.svg';
 
 class Apply extends React.Component {
     constructor() {
@@ -30,23 +32,30 @@ class Apply extends React.Component {
     render() {
         let { motivation, coverLetter } = this.state
         return (
-            <div>
-                <form onSubmit={this.submitForm}>
-                    <input
-                        type="motivation"
-                        placeholder="Motivation for applying"
+            <div className="application__containter">
+                <form className="application__form" onSubmit={this.submitForm}>
+                    <img src={img} alt="Divecity Login" />
+                    <h3>Thank you for your interest in this job</h3>
+                    <h3>please fill out the information below.</h3>
+                    <textarea
+                        className="application__form_input"
+                        type="textarea"
+                        placeholder="What is your motivation for applying? We'd love to hear about it!"
                         name="motivation"
                         value={motivation}
                         onChange={this.handleChange}
                     />
-                    <input
-                        type="text"
+                    <textarea
+                        className="application__form_input"
                         placeholder="Cover Letter"
                         name="coverLetter"
                         value={coverLetter}
                         onChange={this.handleChange}
                     />
-                    <button>Apply</button>
+                    <div className="applicatiion__form_button_goup">
+                        <button className="application__form_button">Apply</button>
+                        <Link to={'/jobs'}><button className="application__form_button">Go Back</button></Link>
+                    </div>
                 </form>
             </div>
         )

@@ -1,0 +1,59 @@
+.application__containter {
+  height: 70%;
+  width: 100%;
+}
+
+.application__containter h3 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.application__containter .application__form {
+  -webkit-transform: translate(50%, 5%);
+          transform: translate(50%, 5%);
+  width: 50%;
+  background-color: #fff;
+  display: block;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.application__containter .application__form .application__form_input {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+  width: 70%;
+  height: 200px;
+  resize: none;
+}
+
+.application__containter .application__form .applicatiion__form_button_goup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.application__containter .application__form .applicatiion__form_button_goup button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8em;
+  color: #fff;
+  width: 10em;
+  padding: 10px 6px;
+  background-color: #75c2f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 4em;
+}
+/*# sourceMappingURL=Apply.css.map */

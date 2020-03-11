@@ -57,3 +57,8 @@
     letter-spacing: $ls;
   }
 }
+
+// Standard Form
+@mixin primary-form {
+  background: $white;
+}

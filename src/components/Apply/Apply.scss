@@ -1,0 +1,53 @@
+@import '../../styles/helper/mixins';
+@import '../../styles/helper/variables';
+
+.application__containter {
+  height: 70%;
+  width: 100%;
+
+  h3 {
+    @include primary-font($size: 1em, $weight: 600);
+  }
+
+  .application__form {
+    transform: translate(50%, 5%);
+    width: 50%;
+    background-color: $white;
+    display: block;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+
+    .application__form_input {
+      @include primary-font($size: 1em);
+      display: flex;
+      margin: 0 auto;
+      margin-bottom: 2vh;
+
+      width: 70%;
+      height: 200px;
+
+      resize: none;
+    }
+
+    .applicatiion__form_button_goup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      button {
+        @include secondary-font(
+          $size: 0.8em,
+          $color: $white
+        );
+        width: 10em;
+        padding: 10px 6px;
+
+        background-color: $primaryBlue;
+
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        margin-left: 4em;
+      }
+    }
+  }
+}

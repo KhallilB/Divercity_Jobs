@@ -72,6 +72,7 @@ class AuthService {
     }
   }
 
+  // Removes token from localstorage
   logout() {
     localStorage.removeItem('nl_token');
   }

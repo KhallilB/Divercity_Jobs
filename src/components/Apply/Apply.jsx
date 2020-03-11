@@ -8,18 +8,23 @@ class Apply extends React.Component {
     constructor() {
         super()
         this.state = {
+            // Hold input information in state
             motivation: '',
             coverLetter: ''
         }
+        // User service to apply to job
         this.JobService = new JobService();
     }
 
+    // Handles event changes made in input fields and maps
+    // them to state
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         });
     };
 
+    // Sends request to backend with data from state
     submitForm = async event => {
         event.preventDefault();
 

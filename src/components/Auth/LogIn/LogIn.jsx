@@ -8,9 +8,13 @@ class LogIn extends React.Component {
     constructor() {
         super();
         this.state = {
+            // Hold input information in state
             username: '',
             password: '',
+
+            // Checks the status of the response
             status: null,
+            // Checks if the user is already logged in
             loggedIn: false
         }
         this.Auth = new AuthService();
@@ -27,7 +31,7 @@ class LogIn extends React.Component {
         }
     }
 
-    // Handle user inputs
+    // Handle user inputs set them to the state values
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value

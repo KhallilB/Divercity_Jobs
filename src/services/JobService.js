@@ -4,11 +4,13 @@ class JobService {
     this.applyToJob = this.applyToJob.bind(this);
   }
 
+  // Create headers object that puts token in headers
   headers = {
     'Content-Type': 'application/json',
     Authorization: this.getToken().toString()
   };
 
+  // Get the current token
   getToken() {
     return localStorage.getItem('nl_token');
   }

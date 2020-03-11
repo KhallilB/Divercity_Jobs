@@ -19,7 +19,38 @@
   background: white;
   height: 20vh;
   width: 60vw;
+  padding: 40px;
   margin: 1.5em;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+}
+
+.jobs__container .jobs__listing:hover {
+  scale: 1.02;
+}
+
+.jobs__container .jobs__listing h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.6em;
+  color: #333241;
+  font-weight: 600;
+}
+
+.jobs__container .jobs__listing h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: #333241;
+}
+
+.jobs__container .jobs__listing p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  font-weight: italic;
+  color: #727272;
+  text-align: center;
 }
 
 .jobs__container .jobs__listing .jobs__listing_right {
@@ -30,5 +61,22 @@
 .jobs__container .jobs__listing .jobs__listing_left {
   width: 80%;
   float: left;
+}
+
+.jobs__container .jobs__listing button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8em;
+  color: #fff;
+  width: 10em;
+  padding: 10px 6px;
+  margin-left: 1.5vw;
+  background-color: #75c2f6;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.jobs__container .jobs__listing button:hover {
+  background-color: #1598f0;
 }
 /*# sourceMappingURL=JobPostings.css.map */

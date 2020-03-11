@@ -13,8 +13,35 @@
     background: white;
     height: 20vh;
     width: 60vw;
-
+    padding: 40px;
     margin: 1.5em;
+
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      scale: 1.02;
+    }
+
+    h2 {
+      @include primary-font(
+        $size: 1.6em,
+        $weight: 600,
+        $color: $black
+      );
+    }
+
+    h3 {
+      @include secondary-font($size: 1em, $color: $black);
+    }
+
+    p {
+      @include secondary-font($size: 1em, $weight: italic);
+      color: darken($color: $grey, $amount: 40);
+      text-align: center;
+    }
 
     .jobs__listing_right {
       width: 20%;
@@ -24,6 +51,27 @@
     .jobs__listing_left {
       width: 80%;
       float: left;
+    }
+
+    button {
+      @include secondary-font($size: 0.8em, $color: $white);
+      width: 10em;
+      padding: 10px 6px;
+      margin-left: 1.5vw;
+
+      background-color: $primaryBlue;
+
+      border: none;
+      border-radius: 5px 5px 5px 5px;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(
+          $color: $primaryBlue,
+          $amount: 20
+        );
+      }
     }
   }
 }

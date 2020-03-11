@@ -22,16 +22,24 @@ class ExpandedJobs extends React.Component {
         let job = this.props.location.state;
         return (
             <div className="job__container">
-                <h1>{job.title}</h1>
-                <h1>{job.company}</h1>
-                <h1>{job.description}</h1>
-                <div>
-                    {this.state.loggedIn ?
-                        <Link to={`/jobs/${job.id}/apply`}>
-                            Apply
+                <div className="job__card">
+                    <div className="job__card_top">
+                        <h1>{job.title}</h1>
+                        <h2>{job.company} • {job.location}</h2>
+                    </div>
+                    <div className="job__card_middle">
+                        <h3><u>Job Description</u></h3>
+                        <h3>{job.description}</h3>
+                    </div>
+                    <div>
+                        {this.state.loggedIn ?
+                            <Link to={`/jobs/${job.id}/apply`}>
+                                Apply
                         </Link> :
-                        <h1><Link to="/auth/login">Log In</Link> to apply to this job</h1>}
+                            <h1>Please <Link to="/auth/login">Log In</Link> to apply to this job</h1>}
+                    </div>
                 </div>
+
             </div>
         )
     }

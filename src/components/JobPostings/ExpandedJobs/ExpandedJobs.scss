@@ -1,0 +1,41 @@
+@import '../../../styles/helper/mixins';
+@import '../../../styles/helper/variables';
+
+.job__container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 4vh;
+
+  .job__card {
+    width: 60%;
+    background-color: $white;
+    padding: 20px;
+    border-radius: 8px 8px 8px 8px;
+
+    h1 {
+      @include primary-font($size: 1.8em, $color: $black);
+      font-weight: 800;
+    }
+
+    h2 {
+      @include primary-font(
+        $size: 1.8em,
+        $color: $black,
+        $weight: 600
+      );
+    }
+
+    h3 {
+      @include secondary-font(
+        $size: 1em,
+        $color: $black,
+        $weight: 600
+      );
+    }
+  }
+}

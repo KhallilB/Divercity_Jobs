@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=ExpandedJobs.css.map */
+.job__container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4vh;
+}
+
+.job__container .job__card {
+  width: 60%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.job__container .job__card h1 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.8em;
+  color: #333241;
+  font-weight: 800;
+}
+
+.job__container .job__card h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.8em;
+  color: #333241;
+  font-weight: 600;
+}
+
+.job__container .job__card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: #333241;
+  font-weight: 600;
+}
+/*# sourceMappingURL=ExpandedJobs.css.map */

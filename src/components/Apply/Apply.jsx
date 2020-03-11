@@ -1,7 +1,7 @@
 import React from 'react';
 import JobService from '../../services/JobService';
 import './Apply.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import img from '../../assets/icon.svg';
 
 class Apply extends React.Component {
@@ -10,7 +10,8 @@ class Apply extends React.Component {
         this.state = {
             // Hold input information in state
             motivation: '',
-            coverLetter: ''
+            coverLetter: '',
+            status: null
         }
         // User service to apply to job
         this.JobService = new JobService();
@@ -31,17 +32,26 @@ class Apply extends React.Component {
         const { motivation, coverLetter } = this.state;
 
         let result = await this.JobService.applyToJob(motivation, coverLetter)
-        console.log(result)
+
+        if (result.status === 200) {
+            let status = result.status
+            this.setState({ status })
+        }
+
     };
 
     render() {
-        let { motivation, coverLetter } = this.state
+        let { motivation, coverLetter, status } = this.state
         return (
             <div className="application__containter">
                 <form className="application__form" onSubmit={this.submitForm}>
                     <img src={img} alt="Divecity Login" />
-                    <h3>Thank you for your interest in this job</h3>
-                    <h3>please fill out the information below.</h3>
+                    {status === 200 ?
+                        <h1 id="success">You have successfully applied for this job.</h1> :
+                        <div>
+                            <h3>Thank you for your interest in this job</h3>
+                            <h3>please fill out the information below.</h3>
+                        </div>}
                     <textarea
                         className="application__form_input"
                         type="textarea"
@@ -62,7 +72,7 @@ class Apply extends React.Component {
                         <Link to={'/jobs'}><button className="application__form_button">Go Back</button></Link>
                     </div>
                 </form>
-            </div>
+            </div >
         )
     }
 }

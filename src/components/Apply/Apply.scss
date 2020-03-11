@@ -2,11 +2,26 @@
 @import '../../styles/helper/variables';
 
 .application__containter {
-  height: 70%;
+  height: 74%;
   width: 100%;
 
   h3 {
     @include primary-font($size: 1em, $weight: 600);
+  }
+
+  img {
+    padding: 5px;
+  }
+
+  #success {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @include primary-font($size: 1em, $color: green);
   }
 
   .application__form {
@@ -22,6 +37,7 @@
       display: flex;
       margin: 0 auto;
       margin-bottom: 2vh;
+      padding: 0.4em;
 
       width: 70%;
       height: 200px;

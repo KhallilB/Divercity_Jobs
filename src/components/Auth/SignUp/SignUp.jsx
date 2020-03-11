@@ -12,7 +12,6 @@ class SignUp extends React.Component {
             username: '',
             name: '',
             password: '',
-            passwordConfirm: '',
             status: null,
             registered: false
         }
@@ -54,14 +53,14 @@ class SignUp extends React.Component {
 
 
     render() {
-        let { username, name, password, passwordConfirm } = this.state;
+        let { username, name, password } = this.state;
 
         return (
-            <div>
-                <h1>Sign Up</h1>
+            <div className="signup__container">
                 {this.state.registered ?
-                    <Redirect to={{ pathname: '/jobs' }} />
-                    : <form onSubmit={this.submitForm}>
+                    <Redirect to={{ pathname: '/jobs' }} /> :
+                    <form className="signup__form" onSubmit={this.submitForm}>
+                        <h1>Sign Up</h1>
                         <input
                             type="username"
                             placeholder="Username"
@@ -83,14 +82,9 @@ class SignUp extends React.Component {
                             value={password}
                             onChange={this.handleChange}
                         />
-                        <input
-                            type="password"
-                            placeholder="Confirm Password"
-                            name="passwordConfirm"
-                            value={passwordConfirm}
-                            onChange={this.handleChange}
-                        />
-                        <button type="submit" value="submit" onClick={this.redirectUser}>Submit</button>
+                        <div>
+                            <button type="submit" value="submit" onClick={this.redirectUser}>Register</button>
+                        </div>
                     </form>}
             </div>
         )

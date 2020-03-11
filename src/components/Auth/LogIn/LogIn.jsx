@@ -53,11 +53,11 @@ class LogIn extends React.Component {
         let { username, password } = this.state;
 
         return (
-            <div>
-                <h1>Log In</h1>
+            <div className="login__container">
                 {this.state.registered ?
-                    <Redirect to={{ pathname: '/jobs' }} />
-                    : <form onSubmit={this.submitForm}>
+                    <Redirect to={{ pathname: '/jobs' }} /> :
+                    <form className="login__form" onSubmit={this.submitForm}>
+                        <h1>Welcome Back!</h1>
                         <input
                             type="username"
                             placeholder="Username"
@@ -72,7 +72,9 @@ class LogIn extends React.Component {
                             value={password}
                             onChange={this.handleChange}
                         />
-                        <button type="submit" value="submit" onClick={this.redirectUser}>Submit</button>
+                        <div>
+                            <button type="submit" value="submit" onClick={this.redirectUser}>Log In</button>
+                        </div>
                     </form>}
             </div>
         )

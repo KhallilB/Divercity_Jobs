@@ -1,0 +1,68 @@
+@import '../../../styles/helper/mixins';
+@import '../../../styles/helper/variables';
+
+.login__container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    @include primary-font($size: 1.9em, $color: $black);
+  }
+
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    transform: translate(0, 40%);
+    background-color: $white;
+
+    padding: 20px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+
+    input {
+      @include secondary-font($size: 0.8em, $color: $black);
+      width: 40vw;
+      height: 5vh;
+      margin-bottom: 20px;
+      padding: 0.5em;
+
+      border: solid $primaryBlue 3px;
+      border-radius: 5px 5px 5px 5px;
+      transition: all 0.2s;
+
+      &:hover,
+      &:active {
+        border: solid
+          darken($color: $primaryBlue, $amount: 20) 3px;
+      }
+    }
+
+    button {
+      @include secondary-font($size: 0.8em, $color: $white);
+      width: 10em;
+      padding: 10px 6px;
+
+      background-color: $primaryBlue;
+
+      border: none;
+      border-radius: 5px 5px 5px 5px;
+
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: darken(
+          $color: $primaryBlue,
+          $amount: 20
+        );
+      }
+    }
+  }
+}
